@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-department_lector-table
+      author: roma
+      changes:
+        - createTable:
+            tableName: department_lector
+            columns:
+              - column:
+                  name: department_id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_department_id
+                    references: department(id)
+              - column:
+                  name: lector_id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    foreignKeyName: fk_lector_id
+                    references: lector(id)

@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-index-department-name
+      author: roma
+      changes:
+        - createIndex:
+            clustered: false
+            columns:
+              - column:
+                  descending: true
+                  name: name
+            indexName: idx_name
+            tableName: department
+            tablespace: A String
+            unique: true
