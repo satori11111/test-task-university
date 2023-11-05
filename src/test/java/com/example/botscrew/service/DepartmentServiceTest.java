@@ -53,8 +53,8 @@ public class DepartmentServiceTest {
                         associate professors - 0
                         professors - 0""";
         when(departmentRepository.findStatisticOfDepartment(anyString()))
-                .thenReturn(List.of(new DepartmentStatistic(Degree.ASSISTANT,2L)));
-        assertEquals(expected,departmentService.getDepartmentStatistics("Physic"));
+                .thenReturn(List.of(new DepartmentStatistic(Degree.ASSISTANT, 2L)));
+        assertEquals(expected, departmentService.getDepartmentStatistics("Physic"));
         verify(departmentRepository).findStatisticOfDepartment(anyString());
     }
 
@@ -66,7 +66,7 @@ public class DepartmentServiceTest {
                 Answer: assistans - 0
                         associate professors - 0
                         professors - 0""";
-        assertEquals(expected,departmentService.getDepartmentStatistics("Physic"));
+        assertEquals(expected, departmentService.getDepartmentStatistics("Physic"));
         verify(departmentRepository).findStatisticOfDepartment(anyString());
     }
 
@@ -93,9 +93,10 @@ public class DepartmentServiceTest {
     void countEmployeeNumberForDepartment_validName_returnsString() {
         when(departmentRepository.countEmployeesByDepartment(anyString()))
                 .thenReturn(10L);
-         assertEquals("10", departmentService.countEmployeeNumberForDepartment("name"));
-         verify(departmentRepository).countEmployeesByDepartment(anyString());
+        assertEquals("10", departmentService.countEmployeeNumberForDepartment("name"));
+        verify(departmentRepository).countEmployeesByDepartment(anyString());
     }
+
     @Test
     void countEmployeeNumberForDepartment_invalidName_returnsString() {
         when(departmentRepository.countEmployeesByDepartment(anyString()))

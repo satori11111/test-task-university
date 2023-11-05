@@ -29,9 +29,9 @@ public class LectorRepositoryTest {
 
 
     @Test
-   void findByNameContaining_validTemplate_returnsListOfStrings() {
+    void findByNameContaining_validTemplate_returnsListOfStrings() {
         List<String> expected = List.of("Andrii", "Roman");
-        Assertions.assertEquals(expected,lectorRepository.findByNameContaining(VALID_TEMPLATE));
+        Assertions.assertEquals(expected, lectorRepository.findByNameContaining(VALID_TEMPLATE));
     }
 
     @Test

@@ -13,11 +13,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class ConsoleRunner implements CommandLineRunner {
     private final CommandStrategy commandStrategy;
+
     @Override
     public void run(String... args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String line;
         while ((line = reader.readLine()) != null) {
+            if (line.equals("exit")) {
+                return;
+            }
             CommandHandler handler = commandStrategy.getHandler(line);
             System.out.println(handler.handleCommand(line));
         }

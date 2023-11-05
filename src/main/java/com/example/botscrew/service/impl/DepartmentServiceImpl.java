@@ -66,7 +66,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public String countEmployeeNumberForDepartment(String name) {
-        return departmentRepository.countEmployeesByDepartment(name).toString();
+       return departmentRepository.countEmployeesByDepartment(name).toString();
     }
 
 }

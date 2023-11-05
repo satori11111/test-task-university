@@ -39,7 +39,7 @@ public class DepartmentRepositoryTest {
 
     @Test
     void findHeadOfDepartmentByName_inValidName_ReturnsNull() {
-        assertEquals(Optional.empty(),departmentRepository.findHeadOfDepartment(INVALID_DEPARTMENT_NAME));
+        assertEquals(Optional.empty(), departmentRepository.findHeadOfDepartment(INVALID_DEPARTMENT_NAME));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class DepartmentRepositoryTest {
 
     @Test
     void findStatistic_invalidName_ReturnsNull() {
-        assertEquals(Collections.emptyList(),departmentRepository.findStatisticOfDepartment(INVALID_DEPARTMENT_NAME));
+        assertEquals(Collections.emptyList(), departmentRepository.findStatisticOfDepartment(INVALID_DEPARTMENT_NAME));
     }
 
     @Test
@@ -68,13 +68,13 @@ public class DepartmentRepositoryTest {
 
     @Test
     void countEmployeesByDepartment_invalidName_Returns0() {
-        assertEquals(0,departmentRepository.countEmployeesByDepartment(INVALID_DEPARTMENT_NAME));
+        assertEquals(0, departmentRepository.countEmployeesByDepartment(INVALID_DEPARTMENT_NAME));
     }
 
 
     @Test
     void countEmployeesByDepartment_validName_ReturnsLong() {
-        assertEquals(2L,departmentRepository.countEmployeesByDepartment(VALID_DEPARTMENT_NAME));
+        assertEquals(2L, departmentRepository.countEmployeesByDepartment(VALID_DEPARTMENT_NAME));
     }
 
 
